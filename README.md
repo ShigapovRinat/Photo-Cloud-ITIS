@@ -35,3 +35,41 @@
 * ACCESS_KEY - ключ доступа от сервисного аккаунта Yandex Cloud
 * SQS_QUEUE - название очереди
 * Точка входа: cloud_function.function
+
+
+# Задание 3
+
+Функции бота:
+
+* ответ на вопрос: Кто это? через Ответить
+* поиск по имени: /find ИМЯ
+
+В Object Storage необходимо создать name.txt и message.txt
+
+## Для функции из папки ask
+
+Создать триггер для очереди из второго задания 
+на функцию из этой папки с точкой входа index.handler
+
+#### Переменные окружения
+* SECRET_KEY (секретный ключ от аккаунта Yandex Cloud)
+* ACCESS_KEY (ключ доступа от аккаунта Yandex Cloud)
+* TELEGRAM_TOKEN (токен telegram бота)
+* DB_BUCKET (название Object Storage, где находится файл message.txt)
+* CHAT_ID (id чата ботом)
+* DB_OBJECT (object_id файла message.txt)
+
+## Для функции из папки bot
+
+Добавить telegram Webhook для этого бота на эту облачную функцию
+Точка входа: index.handler
+
+#### Переменные окружения
+* SECRET_KEY (секретный ключ от аккаунта Yandex Cloud)
+* ACCESS_KEY (ключ доступа от аккаунта Yandex Cloud)
+* TELEGRAM_TOKEN (токен telegram бота)
+* DB_BUCKET (название Object Storage, где находится файл message.txt)
+* CHAT_ID (id чата ботом)
+* DB_MESSAGE_OBJECT (object_id файла message.txt)
+* DB_NAME_OBJECT (object_id файла name.txt)
+* IMAGES_BUCKET_ID (название Object Storage, где находятся фотографии)
